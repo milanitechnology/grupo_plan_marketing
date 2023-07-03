@@ -94,6 +94,26 @@ export default {
     },
 
     updateEletro() {
+      if(this.currentEletro.name == ""){
+        alert("Preencha corretamente o nome do produto.");
+        return false;
+      } 
+
+      if(this.currentEletro.description == ""){
+        alert("Preencha corretamente a descrição do produto.");
+        return false;
+      } 
+
+      if(this.currentEletro.tension == ""){
+        alert("Preencha corretamente a tensão do produto.");
+        return false;
+      } 
+
+      if(this.currentEletro.maker == ""){
+        alert("Preencha corretamente a marca do produto.");
+        return false;
+      } 
+      
       EletroDataService.update(this.currentEletro.id, this.currentEletro)
         .then(response => {
           console.log(response.data);

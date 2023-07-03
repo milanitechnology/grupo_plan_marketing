@@ -93,6 +93,26 @@ export default {
         maker: this.eletrodomestico.maker
       };
 
+      if(data.name == ""){
+        alert("Preencha corretamente o nome do produto.");
+        return false;
+      } 
+
+      if(data.description == ""){
+        alert("Preencha corretamente a descrição do produto.");
+        return false;
+      } 
+
+      if(data.tension == ""){
+        alert("Preencha corretamente a tensão do produto.");
+        return false;
+      } 
+
+      if(data.maker == ""){
+        alert("Preencha corretamente a marca do produto.");
+        return false;
+      } 
+
       EletroDataService.store(data)
         .then(response => {
           this.eletrodomestico.id = response.data.id;
